@@ -1,0 +1,34 @@
+import smtplib
+import ssl
+import os
+from email.message import EmailMessage
+
+
+def alertemail():
+    email_sender = 'parthasarathym1602@gmail.com'
+    email_password = 'aexj xvva jmne cndq'
+    email_receiver = 'parthasarathyvenkidusamy.cs19@bitsathy.ac.in'
+
+    
+    subject = 'Alert.....!!!!'
+    body = """
+Hi User:
+    
+    Looks like an intruder has breached your security
+    
+    check that out
+     
+    """
+    em = EmailMessage()
+    em['From'] = email_sender
+    em['To'] = email_receiver
+    em['Subject'] = subject
+    em.set_content(body)
+
+    
+    context = ssl.create_default_context()
+
+   
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
