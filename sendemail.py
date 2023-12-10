@@ -5,9 +5,9 @@ from email.message import EmailMessage
 
 
 def alertemail():
-    email_sender = 'parthasarathym1602@gmail.com'
-    email_password = 'aexj xvva jmne cndq'
-    email_receiver = 'parthasarathyvenkidusamy.cs19@bitsathy.ac.in'
+    email_sender = ''
+    email_password = ''
+    email_receiver = ''
 
     
     subject = 'Alert.....!!!!'
